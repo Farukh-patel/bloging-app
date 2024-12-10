@@ -44,11 +44,12 @@ blogRouter.get("/:id", async(req,res)=>{
 
 blogRouter.post("/upload", upload.single("coverImage"), async (req, res) => {
     const { title, body } = req.body;
+    const coverImageURL = req.file ? `/uploads/${req.file.filename}` : "/images/no-image.png";
     const blog = await Blog.create({
         body,
         title,
         createdBy: req.user._id,
-        coverImageURL: `/uploads/${req.file.filename}`,
+        coverImageURL
     });
     return res.redirect(`/blog/${blog._id}`);
     // return res.redirect("/");
