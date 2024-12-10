@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <title>Profile</title>
+</head>
+<body >
+         <%- include('partials/nav') %>
+  
+    <div class="flex-grow flex items-center justify-center bg-gray-100">
+        <form method="post" action="/user/profile" class="bg-white  rounded-lg shadow-lg text-center">
+            <div class="container text-center my-5">
+       
+                <img
+                  src="<%= user.profileImageURL %> "
+             
+                  alt="Profile"
+                  className="rounded-circle"
+                  width="150"
+                  height="150"
+                />
+    
+                <p><strong>Name:</strong><%= user.fullName %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+    
+        </form>
+    </div>
+</body>
+</html>

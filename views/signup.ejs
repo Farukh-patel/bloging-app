@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('partials/head') %>
+        <title>sign-up-page</title>
+    </head>
+
+    <body>
+        <%- include('partials/nav') %>
+        <div class="container mt-5">
+          <h2 class="heading my-3">CREATE YOUR ACCOUNT</h2>
+            <form method="post" action="/user/signup" >
+                <div class="mb-3">
+                  <label for="fullName" class="fullName">full Name</label>
+                  <input type="text"  name="fullName" class="form-control" id="fullName" aria-describedby="emailHelp">
+                 
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                 
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                </div>
+
+                <div class="mb-3">
+                  <label for="profileImageURL" class="form-label">profile Image</label>
+                  <input class="form-control form-control-sm" name="profileImageURL" id="profileImageURL" type="file">
+              </div>
+               
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <%- include('partials/script') %>
+    </body>
+
+</html>
+
+
+
